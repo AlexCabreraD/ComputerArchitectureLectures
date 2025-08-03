@@ -1,0 +1,66 @@
+.appShell {
+  display: grid;
+  grid-template-columns: var(--layout-sidebar-width) 1fr;
+  height: 100vh;
+  background: var(--color-bg-primary);
+  overflow: hidden;
+}
+
+.sidebar {
+  background: var(--color-bg-secondary);
+  border-right: var(--border-width) solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebarContent {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  padding: var(--space-4);
+  overflow: hidden;
+}
+
+.main {
+  background: var(--color-bg-primary);
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .appShell {
+    grid-template-columns: 1fr;
+    grid-template-rows: 50vh 1fr;
+    gap: 0;
+  }
+  
+  .sidebar {
+    grid-row: 2;
+    border-right: none;
+    border-top: var(--border-width) solid var(--border-color);
+    background: var(--color-bg-primary);
+    position: relative;
+    transform: none;
+    transition: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  
+  .sidebarContent {
+    height: 50vh;
+    padding: var(--space-4);
+  }
+  
+  .main {
+    grid-row: 1;
+    grid-column: 1;
+    height: 50vh;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .appShell {
+    grid-template-columns: 280px 1fr;
+  }
+}

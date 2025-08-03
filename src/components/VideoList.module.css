@@ -1,0 +1,344 @@
+.videoList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  height: 100%;
+}
+
+.searchHeader {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  margin-bottom: var(--space-4);
+}
+
+.searchHeader :global(.container) {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.videoItem {
+  position: relative;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  width: 100%;
+}
+
+.videoItem:hover {
+  transform: translateY(-1px);
+}
+
+.videoItemButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  background: transparent;
+  border: var(--border-width) solid transparent;
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  font-family: inherit;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  min-height: 52px;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.videoItemButton:hover {
+  background: var(--color-surface-hover);
+  border-color: var(--border-color-hover);
+  color: var(--color-text-primary);
+}
+
+.videoItemButton:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 2px;
+}
+
+.videoItem.active .videoItemButton {
+  background: var(--color-accent-primary);
+  border-color: var(--color-accent-primary);
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+
+.videoItem.active:hover .videoItemButton {
+  background: var(--color-accent-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.videoItemContent {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex: 1;
+  min-width: 0;
+}
+
+.videoItemIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-secondary);
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.videoItem.active .videoItemIcon {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.partNumber {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.videoItem.active .partNumber {
+  color: white;
+}
+
+.videoItemText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.videoTitle {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-tight);
+  color: inherit;
+}
+
+.videoMeta {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-tertiary);
+  line-height: 1;
+}
+
+.videoItem.active .videoMeta {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.videoItemStatus {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.statusBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+}
+
+.statusBadge.completed {
+  background: var(--color-accent-success);
+  color: white;
+}
+
+.statusBadge.watched {
+  background: var(--color-accent-primary);
+}
+
+.statusBadge.unwatched {
+  background: transparent;
+  border: 1px solid var(--color-surface-hover);
+}
+
+.watchedDot {
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: var(--radius-full);
+}
+
+.unwatchedRing {
+  width: 6px;
+  height: 6px;
+  border: 1px solid var(--color-text-tertiary);
+  border-radius: var(--radius-full);
+}
+
+.videoItem.active .statusBadge.unwatched .unwatchedRing {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.groupTrigger {
+  padding: var(--space-4) !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+.groupTrigger:hover {
+  background: var(--color-surface-hover) !important;
+}
+
+.groupTrigger.active {
+  background: var(--color-surface-secondary) !important;
+  color: var(--color-accent-secondary) !important;
+}
+
+.groupHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: var(--space-3);
+}
+
+.groupTitleSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  flex: 1;
+  min-width: 0;
+}
+
+.groupTitle {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: inherit;
+  margin: 0;
+  line-height: var(--line-height-tight);
+}
+
+.groupMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.progressText {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-tertiary);
+  line-height: 1;
+}
+
+.groupTrigger.active .progressText {
+  color: var(--color-accent-secondary);
+}
+
+.groupProgress {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.progressRing {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progressCircle {
+  transition: stroke-dasharray var(--transition-slow);
+}
+
+.progressPercentage {
+  position: absolute;
+  font-size: 8px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-accent-success);
+  line-height: 1;
+}
+
+.videoItemsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-2) ;
+  width: 100%;
+}
+
+.videoList :global(.accordion) {
+  gap: var(--space-2);
+}
+
+.videoList :global(.accordionItem) {
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-surface-primary);
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+.videoList :global(.accordionItem:hover) {
+  border-color: var(--border-color-hover);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.videoList :global(.accordionContent) {
+  border-top: var(--border-width) solid var(--border-color);
+  background: var(--color-bg-secondary);
+}
+
+@media (max-width: 768px) {
+  .videoItemButton {
+    min-height: 56px;
+    padding: var(--space-4);
+  }
+  
+  .videoItemContent {
+    gap: var(--space-4);
+  }
+  
+  .videoItemIcon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .videoTitle {
+    font-size: var(--font-size-base);
+  }
+  
+  .groupTitle {
+    font-size: var(--font-size-base);
+  }
+  
+  .statusBadge {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .progressRing {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .progressRing svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .videoItem,
+  .videoItemButton,
+  .statusBadge,
+  .progressCircle,
+  .videoList :global(.accordionItem) {
+    transition: none;
+  }
+  
+  .videoItem:hover,
+  .videoList :global(.accordionItem:hover) {
+    transform: none;
+  }
+}

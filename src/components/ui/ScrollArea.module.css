@@ -1,0 +1,39 @@
+.scrollArea {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.viewport {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: var(--space-1);
+}
+
+.viewport::-webkit-scrollbar {
+  width: 6px;
+}
+
+.viewport::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.viewport::-webkit-scrollbar-thumb {
+  background: var(--color-surface-secondary);
+  border-radius: var(--radius-full);
+  transition: background-color var(--transition-fast);
+}
+
+.viewport::-webkit-scrollbar-thumb:hover {
+  background: var(--color-surface-hover);
+}
+
+.viewport {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-surface-secondary) transparent;
+}
+
+.viewport {
+  scroll-behavior: smooth;
+}
