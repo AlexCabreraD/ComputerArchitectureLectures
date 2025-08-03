@@ -1,5 +1,6 @@
 {
     "name": "videos-cs6810",
+    "homepage": "https://alexcabrerad.github.io/ComputerArchitectureLectures",
     "private": true,
     "version": "0.0.0",
     "type": "module",
