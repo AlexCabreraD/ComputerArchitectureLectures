@@ -37,13 +37,16 @@
 
 @media (max-width: 768px) {
   .container {
-    height: 100vh;
+    height: 100%;
     padding: var(--space-1);
+    align-items: flex-start;
+    padding-top: var(--space-2);
   }
   
   .videoWrapper {
-    max-width: calc(100vw - var(--space-2));
-    max-height: calc(100vh - var(--space-2));
+    width: 100%;
+    max-width: 100%;
+    max-height: calc(50vh - var(--space-3));
     border-radius: var(--radius-md);
   }
   
@@ -55,11 +58,13 @@
 @media (max-width: 480px) {
   .container {
     padding: var(--space-1);
+    padding-top: var(--space-1);
   }
   
   .videoWrapper {
-    max-width: calc(100vw - var(--space-2));
-    max-height: calc(100vh - var(--space-2));
+    width: 100%;
+    max-width: 100%;
+    max-height: calc(50vh - var(--space-2));
     border-radius: var(--radius-base);
   }
   
