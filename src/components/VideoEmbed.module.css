@@ -3,14 +3,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--space-6);
+  padding: var(--space-2);
   background: var(--color-bg-primary);
 }
 
 .videoWrapper {
   position: relative;
   width: 100%;
-  max-width: 1200px;
+  height: 100%;
+  max-width: min(calc(100vh * 16/9), calc(100vw - var(--space-4)));
+  max-height: min(calc(100vw * 9/16), calc(100vh - var(--space-4)));
   aspect-ratio: 16/9;
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -35,12 +37,13 @@
 
 @media (max-width: 768px) {
   .container {
-    height: 50vh;
-    padding: var(--space-4);
+    height: 100vh;
+    padding: var(--space-1);
   }
   
   .videoWrapper {
-    max-width: 100%;
+    max-width: calc(100vw - var(--space-2));
+    max-height: calc(100vh - var(--space-2));
     border-radius: var(--radius-md);
   }
   
@@ -51,10 +54,12 @@
 
 @media (max-width: 480px) {
   .container {
-    padding: var(--space-3);
+    padding: var(--space-1);
   }
   
   .videoWrapper {
+    max-width: calc(100vw - var(--space-2));
+    max-height: calc(100vh - var(--space-2));
     border-radius: var(--radius-base);
   }
   
