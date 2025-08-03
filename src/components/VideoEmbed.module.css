@@ -15,7 +15,7 @@
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-xl);
-  background: var(--color-surface-primary);
+  background: #000000;
 }
 
 .iframe {
